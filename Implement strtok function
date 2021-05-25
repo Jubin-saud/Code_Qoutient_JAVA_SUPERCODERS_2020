@@ -1,0 +1,51 @@
+The strtok function will take two parameters i.e. a string and a delimiter. It then split the string by the delimiter. For example, printing all words from a comma separated list.
+
+Write your own implementation of strtok function in C.
+
+Input
+
+The first line of input contains an integer T denoting the no of test cases . Then T test cases follow. Each test case contains two strings str1, delim.
+
+Function char* strtok_code(char *str1, char delim) will take a string and a delimiter as parameters and returns the delimited words from string till end of it, and return NULL if no more token remains.
+
+Output
+
+For each test case, print all tokens in new lines.
+
+Sample Input
+
+2
+Code-Quotient -
+Hello/Hi/Hello /
+Sample Output
+
+Code
+Quotient
+Hello
+Hi
+Hello
+
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+// Other imports go here
+// Do NOT change the class name
+class Main{
+  static void strtokCode(String str,char delim){
+     //Complete the function
+    StringTokenizer st = new StringTokenizer(str,"-/");
+    while(st.hasMoreTokens()){
+      System.out.println(st.nextToken());
+    }
+  }
+  public static void main(String[] args){
+    Scanner in = new Scanner(System.in);
+    int t = in.nextInt();
+    while(t-- > 0){
+      String str = in.next();
+      char ch = in.next().charAt(0);
+      strtokCode(str,ch);
+      // Write your code here
+    }
+  }
+}
