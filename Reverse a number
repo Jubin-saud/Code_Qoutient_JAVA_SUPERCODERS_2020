@@ -1,0 +1,43 @@
+Write a program to reverse a number.
+
+Input
+
+Each test case will contain number n as test case where 0<=n<=99999.
+
+Output
+
+For each input case, calculate and print the reverse of the number.
+
+Sample Input
+
+1234
+Sample Output
+
+432
+
+
+import java.util.Scanner;
+// Other imports go here
+// Do NOT change the class name
+class Main{
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        Reverse(num);
+    }
+
+    public static void Reverse(int num)
+    {
+        if (num < 10) {
+            System.out.println(num);
+            return;
+        }
+        else
+            {
+            System.out.print(num % 10);
+            Reverse(num / 10);
+        }
+    }
+
+}
