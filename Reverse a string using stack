@@ -1,0 +1,66 @@
+Given a string, the task is to reverse the string using stack data structure.
+
+Complete the function reverseString() that accepts the string, and reverses the string.
+
+Input
+
+The first line of input will contains an integer T denoting the no of test cases. Then T test cases follow. 
+Each test case contains a number N.
+Then N strings follow which are to be reversed
+Output
+
+For each test case, you have to reverse the string in the array given. You are required to complete the methods given only.
+
+
+Sample Input
+
+1 // No. of test cases
+2 // No. of strings
+CodeQuotient
+Code
+Sample Output
+
+tneitouQedoC
+edoC
+
+**********************************************************************code-----************************************************************************************
+
+/* class CQStack{
+      public CQStack(int s) // constructor
+      public void push(int j) // put item on top of stack
+      public int pop() // take item from top of stack
+      public boolean isEmpty() // true if stack is empty
+      public boolean isFull() // true if stack is full
+    }
+	CQStack class already defined as per the above blueprint
+*/
+
+static String reverseString(CQStack s, String str)
+{
+  // base case: if the string is null or empty
+        if (str == null || str.equals("")) {
+            return str;
+        }
+ 
+        // create an empty stack of characters
+        Stack<Character> stack = new Stack<Character>();
+ 
+        // push every character of the given string into the stack
+        char[] ch = str.toCharArray();
+        for (int i = 0; i < str.length(); i++) {
+            stack.push(ch[i]);
+        }
+ 
+        // start from index 0
+        int k = 0;
+ 
+        // pop characters from the stack until it is empty
+        while (!stack.isEmpty())
+        {
+            // assign each popped character back to the character array
+            ch[k++] = stack.pop();
+        }
+ 
+        // convert the character array into a string and return it
+        return String.copyValueOf(ch);
+}
