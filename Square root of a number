@@ -1,0 +1,22 @@
+// Do NOT change the class name
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+class Main
+{
+  public static void main(String[] args)
+  {
+    // Write your code here
+    DecimalFormat df = new DecimalFormat("#.00");
+        double a,b;
+        int n,i;
+        Scanner scanner = new Scanner(System.in);
+        n=scanner.nextInt();
+        for (i=1;i<=n;i++){
+            a = scanner.nextDouble();
+            b=Math.sqrt(a);
+            System.out.println(df.format(b));
+  }
+}
+}
+@jubinSaud
