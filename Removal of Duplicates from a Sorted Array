@@ -1,0 +1,48 @@
+Write a function removeDuplicates() which receives a array as input and remove the duplicate elements from the array. After the function call, the array will contain a set of unique elements..
+
+Suppose the array contains the following values:
+
+{7, 7, 18, 18, 18, 18, 21, 39, 39, 42, 42, 42}
+After a call to removeDuplicates(arr, size); , the array should store the following values:
+
+{7, 18, 21, 39, 42}
+If the array is empty or does not contain any duplicate values, calling your function should have no effect.
+
+Input Format
+
+First line contains the number of elements in array N.
+and N integers will follow in next N lines.
+Output Format
+
+Print the non-duplicate elements of array.
+Sample Input
+
+5
+1
+1
+2
+3
+3
+Sample Output
+
+1
+2
+3
+
+// Return the new size of array.
+static int removeDuplicates(int arr[], int size)
+{
+        if (size==0 || size==1)
+            return size;
+
+        int[] temp = new int[size];
+        int j = 0;
+        for (int i=0; i<size-1; i++)
+            if (arr[i] != arr[i+1])
+                temp[j++] = arr[i];
+        temp[j++] = arr[size-1];
+        for (int i=0; i<j; i++)
+            arr[i] = temp[i];
+        return j;
+
+}
