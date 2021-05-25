@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main{
+    public static int fibonacciRecursion(int n){
+        if(n == 0){
+            return 0;
+        }
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        return fibonacciRecursion(n-2) + fibonacciRecursion(n-1);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int maxNumber = sc.nextInt();
+        for(int i = maxNumber-1; i >=0 ; i--){
+            System.out.print(fibonacciRecursion(i) +"\n");
+        }
+    }
+}
